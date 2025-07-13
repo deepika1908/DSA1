@@ -1,3 +1,4 @@
+//USING ARRAY
 #include<iostream>
 #include<stack>
 using namespace std;
@@ -6,21 +7,24 @@ class Stack{
     private:
         int *arr;
         int top;
-        int capacity;
+        int MAX;
 
     public:
     Stack(int size){
-        capacity=size;
-        arr=new int[capacity];
+        MAX=size;
+        arr=new int[MAX];
         top=-1;
     }
 
     void push(int x){
-        if(top==capacity-1){
+        if(top==MAX-1){
             cout<<"Overflow"<<endl;
             return ;
+        }else{
+            top++;
+            arr[top]=x;
+            return;
         }
-        arr[++top]=x;
     }
 
     int pop(){
